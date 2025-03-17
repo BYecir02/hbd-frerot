@@ -74,6 +74,41 @@
             animation: draw 3s ease-out;
         }
 
+        .wishes {
+            background: #FCF8F3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .wishes::before {
+            content: "★";
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            background: #FFFDFA;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .wish-item {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .wish-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #7A6248;
+            border-radius: 50%;
+        }
+
         @keyframes draw {
             from { width: 0 }
             to { width: 80% }
@@ -86,6 +121,10 @@
             
             .handwriting {
                 font-size: 1.2em;
+            }
+            
+            .wishes {
+                padding: 15px;
             }
         }
     </style>
@@ -115,6 +154,28 @@
             <div class="path"></div>
         </div>
 
+        <div class="wishes">
+            <div class="wish-item">
+                Que chaque pas vers tes rêves te rappelle<br> 
+                la force de ceux qu'on a faits ensemble à Avotrou
+            </div>
+
+            <div class="wish-item">
+                Que l'igname de la réussite soit toujours<br>
+                aussi savoureux que ceux de notre jeunesse
+            </div>
+
+            <div class="wish-item">
+                Qu'entre Cotonou et Lille,<br>
+                notre amitié reste ce pont qui ne rouille jamais
+            </div>
+
+            <div class="wish-item">
+                Enfin, que cette 21ème année soit<br>
+                le début de tout ce que tu mérites vraiment
+            </div>
+        </div>
+
         <div class="handwriting" style="text-align: center;">
             2014 - 2025<br>
             De la cour du Rocher<br>
@@ -125,7 +186,7 @@
         <div style="margin-top: 40px; color: #5E5E5E; text-align: center;">
             <p>Même si Lille me tient loin de Cotonou,<br>
             Je sais qu'au bout du chemin - tu es là.<br>
-            Bon anniversaire frerot.</p>
+            Bon anniversaire frerot</p>
             
             <div style="margin-top: 20px; font-size: 0.9em;">
                 Yecir <br>
