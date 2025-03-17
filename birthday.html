@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Mon Frère! 🎉</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            height: auto;
+            margin: 20px;
+            perspective: 1000px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 60%; /* Ratio 5:3 pour maintenir les proportions */
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding-bottom: 80%; /* Ratio plus carré pour mobile */
+            }
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .front {
+            background: #fff;
+            justify-content: center;
+        }
+
+        .back {
+            background: #4ecdc4;
+            transform: rotateY(180deg);
+            color: white;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: calc(1.5em + 3vw);
+            color: #ff6b6b;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: calc(1.2em + 2vw);
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            border-radius: 50%;
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .era {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1 1 120px;
+            max-width: 150px;
+            font-size: 0.9em;
+        }
+
+        .message {
+            font-style: italic;
+            font-size: calc(0.8em + 0.5vw);
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            animation: confetti-fall 3s infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Media Queries pour petits écrans */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .era {
+                flex: 1 1 100px;
+                font-size: 0.8em;
+                padding: 8px;
+            }
+
+            .message {
+                font-size: 0.9em;
+            }
+
+            .balloon {
+                width: 30px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>🎂 Joyeux Anniversaire! 🎉</h1>
+                <p>De la 4ème à la 4ème année... 🚀</p>
+                <div class="balloons">
+                    <div class="balloon" style="left: 5%; background: #ff6b6b;"></div>
+                    <div class="balloon" style="left: 25%; background: #4ecdc4; animation-delay: -2s"></div>
+                    <div class="balloon" style="left: 60%; background: #ffe66d; animation-delay: -4s"></div>
+                </div>
+            </div>
+            <div class="back">
+                <h2>10 Ans d'Amitié! 🤝</h2>
+                <div class="timeline">
+                    <div class="era">
+                        🎒 4ème<br>2014
+                    </div>
+                    <div class="era">
+                        🎓 Lycée<br>2017
+                    </div>
+                    <div class="era">
+                        🎓 BAC<br>2020
+                    </div>
+                    <div class="era">
+                        🏛️ Fac<br>2024
+                    </div>
+                </div>
+                <p class="message">
+                    "Merci pour les fous rires, les galères,<br class="desktop-only">
+                    et toutes ces années complices.<br>
+                    T'es plus qu'un pote, t'es un frère.<br>
+                    Bon anniv chef! 🍻"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti adaptés mobile -->
+    <div class="confetti" style="left: 5%; animation-delay: 0s"></div>
+    <div class="confetti" style="left: 15%; animation-delay: 0.5s"></div>
+    <div class="confetti" style="left: 85%; animation-delay: 1.5s"></div>
+</body>
+</html>
